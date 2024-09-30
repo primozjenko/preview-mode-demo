@@ -1,5 +1,7 @@
 .layout {
   padding-top: var(--gap-double);
+  /* Keep the padding on top */
+  padding: 1rem;
 }
 
 .layout aside {
@@ -43,4 +45,490 @@
   max-width: min(var(--width-tablet), calc(100vw - var(--gap-double)));
   margin: 0 auto;
   text-align: center;
+}
+
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  padding: 20px;
+  margin-top: -102px;
+  width: min-content;
+  z-index: 9001;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  position: fixed;
+  /* Ensure the menu is fixed and will stay within the viewport */
+  top: 0;
+  left: 0;
+  /* Move the menu to the left */
+  height: fit-content;
+  /* Make the menu full height */
+  width: 250px;
+  /* Width of the menu */
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 4rem;
+  overflow-y: auto;
+  /* Ensure scroll if the content overflows */
+  z-index: 9000;
+}
+
+.navbar a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+  text-align: left;
+  /* Align text to the left */
+
+}
+
+.navbar a:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar.showMenu {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    font-size: 2rem;
+    padding: 15px 20px 20px 10px;
+
+  }
+
+  .navbar {
+    position: fixed;
+  }
+
+  .navbar.showMenu {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+    text-align: left;
+    /* Align text to the left */
+
+  }
+
+  .navbar a:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  /* Increase max-width for wider layout */
+  padding: 2rem;
+  /* Add padding for breathing space */
+}
+
+.title,
+.subtitle {
+  text-align: center;
+  /* Center title and subtitle */
+  margin-bottom: 1.5rem;
+  padding-bottom: 24px;
+  /* Add space after titles */
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  /* Increase font size for better readability */
+  line-height: 1.7;
+  /* Add more line height for readability */
+  margin-bottom: 2rem;
+  /* Space between paragraphs */
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  /* Remove default list padding */
+}
+
+.listItem {
+  margin-bottom: 1rem;
+  /* Space between list items */
+}
+
+.listItem:before {
+  content: '●';
+  /* Custom bullet */
+  color: #0070f3;
+  /* Bullet color */
+  margin-right: 0.5rem;
+  /* Space between bullet and text */
+}
+
+.imageSection {
+  text-align: center;
+  margin: 1rem 0;
+  /* Add margin to separate from other sections */
+
+}
+
+/* Ensure the image wrapper is positioned relative */
+.heroSection {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.imageWrapper {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+
+.imageWrapper2 {
+  position: relative;
+  max-width: 30%;
+  height: auto;
+}
+
+/* Text overlay that appears on top of the image */
+.textOverlay {
+  position: absolute;
+  top: 41%;
+  /* Adjust as needed */
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background-color: rgba(144, 238, 144, 0.8);
+  /* Semi-transparent green background */
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  color: #000;
+  text-align: center;
+  width: fit-content;
+  max-width: 80%;
+}
+
+.textOverlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.textOverlay p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+
+.button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 1000px) {
+
+  /* Text overlay that appears on top of the image */
+  .textOverlay {
+    position: absolute;
+    top: 39%;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background-color: rgba(144, 238, 144, 0.8);
+    /* Semi-transparent green background */
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    color: #000;
+    text-align: center;
+    max-width: 70%;
+  }
+
+  .textOverlay h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .textOverlay p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+
+  /* Text overlay that appears on top of the image */
+  .textOverlay {
+    position: absolute;
+    top: 40%;
+    /* Adjust as needed */
+    left: 50%;
+    width: max-content;
+  }
+}
+
+@media (max-width: 670px) {
+
+  /* Text overlay that appears on top of the image */
+  .textOverlay {
+    position: absolute;
+    top: 37%;
+    /* Adjust as needed */
+    left: 50%;
+    padding: 24px;
+    width: max-content;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 620px) {
+
+  /* Text overlay that appears on top of the image */
+  .textOverlay {
+    position: absolute;
+    top: 37%;
+    /* Adjust as needed */
+    left: 50%;
+    padding: 1rem 1rem;
+    width: max-content;
+    max-width: 80%;
+  }
+
+  .textOverlay h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .textOverlay p {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 570px) {
+
+  /* Text overlay that appears on top of the image */
+  .textOverlay {
+    position: absolute;
+    top: 34%;
+    padding: 1rem 1rem;
+
+  }
+
+  .textOverlay h2 {
+    font-size: 1rem;
+  }
+
+  .textOverlay p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .textOverlay {
+    /*   position: relative;  */
+    /* Remove absolute positioning */
+    top: 35%;
+    padding: 16px;
+    max-width: 90%;
+  }
+
+  .textOverlay p {
+    margin-bottom: 6px;
+  }
+
+}
+
+@media (max-width: 440px) {
+  .textOverlay {
+    top: 33%;
+    padding: 13px;
+    text-align: center;
+    /* Center text */
+    max-width: 90%;
+  }
+
+
+  .textOverlay p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width:410px) {
+
+  .textOverlay {
+    top: 34%;
+    padding: 12px;
+    text-align: center;
+    /* Center text */
+    max-width: 85%;
+
+  }
+
+  .textOverlay p {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width:380px) {
+
+  .textOverlay {
+    top: 36%;
+    padding: 11px;
+    text-align: center;
+    /* Center text */
+    max-width: 85%;
+
+  }
+
+  .textOverlay p {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+  }
+
+  .button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+
+.introductionSection {}
+
+.card-wrapper {}
+
+.textContent {}
+
+.imageContent {}
+
+.downloadSection {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-bottom: 50px;
+  background-color: #d2d7c983;
+  border-radius: 10px;
+}
+
+.downloadSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.downloadSection p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.downloadButton {
+  display: inline-block;
+  background-color: #98db95;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bookCovers {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.footer {
+  background: rgb(220, 222, 224);
+  background: radial-gradient(circle, rgba(220, 222, 224, 1) 5%, rgba(255, 255, 255, 1) 100%);
+  color: rgb(8, 6, 11);
+  padding: 2rem 0;
+  margin: 50px 0 -1rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+
+}
+
+.footerContent {
+  margin-bottom: 1rem;
+}
+
+.footerContent p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer a {
+  color: #414242;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #1abc9c;
+  /* Hover effect for email/phone */
+}
+
+.footer .socialIcons {
+  margin-top: 1rem;
+}
+
+.footer .socialIcons a {
+  margin: 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+.footer .socialIcons a:hover {
+  color: #1abc9c;
+  /* Change icon color on hover */
+}
+
+/* Mobile Responsive Footer */
+@media (max-width: 600px) {
+  .footer {
+    background: rgb(220, 222, 224);
+    background: radial-gradient(circle, rgba(220, 222, 224, 1) 5%, rgba(255, 255, 255, 1) 100%);
+    margin: 50px -1rem -1rem -1rem;
+    padding: 1.5rem 0;
+    border-radius: 0;
+  }
+
+  .footer .socialIcons a {
+    font-size: 1.3rem;
+  }
+}
+
+/* Add space between content and footer */
+#kontakt {
+  margin-bottom: 3rem;
+  /* Adjust the value for more or less space */
 }

@@ -32,6 +32,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -47,7 +48,8 @@ body {
   color: var(--fg);
   font-family: var(--font-sans);
   line-height: 1.5;
-
+max-width: 1200px;
+margin: 0 auto;
   background-image: radial-gradient(#ddd 1px, transparent 1px),
     radial-gradient(#ddd 1px, transparent 1px);
   background-position: 0 0, 25px 25px;
@@ -114,7 +116,7 @@ h2 {
 
 @media (max-width: 768px) {
   h2 {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     letter-spacing: 0;
   }
 }
